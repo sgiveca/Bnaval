@@ -77,7 +77,10 @@ public class JogoMain {
 		        
 		        validacaoInicio v1 = new validacaoInicio(mJog1); 
 		        String retorno = v1.validar();
+
 		        System.out.println("retorno 1 = " + retorno);
+		        
+		        System.out.println("retorno teste");
 		        tabuleiro pr = new tabuleiro(1);
 		      	pr.criaJanela(mJog1);    
 		      	
