@@ -75,6 +75,7 @@ public class JogoMain {
 		            }
 		        }
 		        
+		        /* erro aqui */
 		        validacaoInicio v1 = new validacaoInicio(mJog1); 
 		        String retorno = v1.validar();
 
