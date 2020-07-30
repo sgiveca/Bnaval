@@ -6,7 +6,7 @@ public class JogoMain {
 
    public static void main(String[] args) {
 		        // TODO Auto-generated method stub
-		        String CAMINHO = "C:\\Users\\Sergio Carvalho\\Documents\\Java Projects\\BatalhaNaval\\data\\";
+		        String CAMINHO = "C:\\Users\\Sergio Carvalho\\Documents\\Java Projects\\Bnaval\\data\\";
 		        Scanner sc = new Scanner(System.in);
 
 		        String[][] mJog1 = new String[15][15];
