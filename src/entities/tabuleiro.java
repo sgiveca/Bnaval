@@ -14,7 +14,9 @@ import javax.swing.JTable;
  * @author Rosicléia Frasson
  */
 public class tabuleiro extends JFrame {
-    JPanel painelFundo;
+
+	private static final long serialVersionUID = 1L;
+	JPanel painelFundo;
     JTable tabela;
     JScrollPane barraRolagem;
     JLabel label;
@@ -28,11 +30,11 @@ public class tabuleiro extends JFrame {
     }
      
     public void criaJanela(String[][] matriz){
-         tabela = new JTable(matriz, colunas);
+        tabela = new JTable(matriz, colunas);
         barraRolagem = new JScrollPane(tabela);
         painelFundo.add(barraRolagem); 
         JLabel label2 = new JLabel("atirar");
-        painelFundo.add(label2); 
+        painelFundo.add(label2);  
     
         getContentPane().add(painelFundo);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
