@@ -30,11 +30,13 @@ public class tabuleiro extends JFrame {
     }
      
     public void criaJanela(String[][] matriz){
+        painelFundo = new JPanel();
+        painelFundo.setLayout(new GridLayout(1, 1));
         tabela = new JTable(matriz, colunas);
         barraRolagem = new JScrollPane(tabela);
         painelFundo.add(barraRolagem); 
-        JLabel label2 = new JLabel("atirar");
-        painelFundo.add(label2);  
+/*        JLabel label2 = new JLabel("atirar");
+        painelFundo.add(label2);  */
     
         getContentPane().add(painelFundo);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
