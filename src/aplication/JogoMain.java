@@ -7,12 +7,13 @@ public class JogoMain {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		/*
-		 * String CAMINHO =
-		 * "C:\\Users\\Sergio Carvalho\\Documents\\Java Projects\\Bnaval\\data\\";
-		 * String CAMINHO =
-		 * "C:\\Users\\Sergio Carvalho\\Documents\\Java Projects\\Bnaval\\data\\";
-		 */ String CAMINHO = "C:\\Users\\Marcello Zambello\\Documents\\Project\\Bnaval\\data\\";
+		
+		 String CAMINHO = "C:\\Users\\Sergio Carvalho\\Documents\\Java Projects\\Bnaval\\data\\";
+		 
+	  /* String CAMINHO =
+		 "C:\\Users\\Sergio Carvalho\\Documents\\Java Projects\\Bnaval\\data\\";
+		 
+		  String CAMINHO = "C:\\Users\\Marcello Zambello\\Documents\\Project\\Bnaval\\data\\";*/
 
 		Scanner sc = new Scanner(System.in);
 
@@ -38,48 +39,24 @@ public class JogoMain {
 		System.out.println("Jogador 2 :" + arq2);
 
 		sc.close();
-
+		
+		/* Trata Tab 1 */
 		lerArquivoCsv lAC = new lerArquivoCsv(arq1);
 		lAC.Carga();
 		mJog1 = lAC.mat;
-		if (mJog1[0][0].equals("E")) {
-			System.out.println("Erro na carga Arquivo1 :");
-		} else {
-			System.out.println(">>>> Arquivo 1 >>>>");
-			for (int i = 0; i < 15; i++) {
-				for (int n = 0; n < 15; n++) {
-					if (mJog1[i][n] == null) {
-						System.out.printf(" !");
-					} else
-						System.out.printf(" !" + mJog1[i][n]);
-				}
-				System.out.println(" ");
-			}
-		}
-
+		exibeTabuleiro eT1 = new exibeTabuleiro(mJog1, 1);
+		eT1.exibeTab();
+		
+		/* Trata Tab 2 */
 		lerArquivoCsv AC2 = new lerArquivoCsv(arq2);
 		AC2.Carga();
 		mJog2 = AC2.mat;
-
-		if (mJog1[0][0].equals("E")) {
-			System.out.println("Erro na carga Arquivo2 :");
-		} else {
-			System.out.println(">>>> Arquivo 2 >>>>");
-			for (int i = 0; i < 15; i++) {
-				for (int n = 0; n < 15; n++) {
-					if (mJog2[i][n] == null) {
-						System.out.printf(" !");
-					} else
-						System.out.printf(" !" + mJog2[i][n]);
-				}
-				System.out.println(" ");
-			}
-		}
+		exibeTabuleiro eT2 = new exibeTabuleiro(mJog2, 2);
+		eT2.exibeTab();
 
 		/* erro aqui */
 		validacaoInicio v1 = new validacaoInicio(mJog1);
 		String retorno = v1.validar();
-
 		System.out.println("retorno 1 = " + retorno);
 
 		System.out.println("retorno teste");
@@ -92,5 +69,8 @@ public class JogoMain {
 		tabuleiro sd = new tabuleiro(2);
 		sd.criaJanela(mJog2);
 
+		obterJogadas oJ = new obterJogadas(mJog1,mJog2)
+		oJ.IniciaJogo();
+		System.out.println("FIM DE JOGO");
 	}
 }
